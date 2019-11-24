@@ -1,0 +1,27 @@
+<div class="container">
+  <button type="button" class="btn btn-success" (click)="showHide()">Hide/Show</button>
+  <br>
+  {{message}}
+  <table class="table table-striped" >
+    <thead>
+    <tr>
+      <th scope="col">Stt</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <ng-container *ngIf="show"><th scope="col">Image</th></ng-container>
+      <th scope="col">Action</th>
+      <th scope="col">Star</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let product of productFilter,let i = index">
+    <tr>
+      <th scope="row">{{i+1}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <ng-container *ngIf="show"><td><img src="{{product.image}}" style="width: 70px"></td></ng-container>
+      <td><button (click)="delete(i)" class="btn btn-danger"  style="width: 90px">Delete</button></td>
+      <app-star [star]="product.star" (clickStar)="showMessage($event)"></app-star>
+    </tr>
+    </tbody>
+  </table>
+</div>

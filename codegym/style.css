@@ -1,0 +1,59 @@
+.container .banner {
+    background: url('images/banner.jpg') center;
+    height: 400px;
+    background-size: cover;
+}
+
+.container .banner .heading {
+    padding: 100px;
+    color: #005cbf;
+    text-transform: uppercase;
+}
+
+.header {
+    margin: 40px 0 40px 0;
+}
+
+.container .codegym-intro {
+    background-color: #1b1e21;
+    margin: 30px 0 15px 0;
+
+}
+
+.container .codegym-intro .logo img {
+    width: 250px;
+    height: 50px;
+    margin: 20px 0 0 20px;
+}
+
+.container .codegym-intro .content {
+    margin-top: 10px;
+}
+
+
+.container .gallery .image img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.container .gallery .image img:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s;
+}
+
+.bottom-container img {
+    width: 100%;
+}
+
+.container .footer {
+    background-color: #004085;
+    padding: 20px;
+    color: #f2f2f2;
+}
+a{
+    color: white;
+}
+ul{
+    list-style-type: none ;
+}
+

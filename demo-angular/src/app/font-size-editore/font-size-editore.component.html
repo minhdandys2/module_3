@@ -1,0 +1,14 @@
+<h2> font size editor</h2>
+ <div>
+   <label>
+     Enter font size (px):
+     <input type="number" [value]="fontSize" (change)="onChangerFontSize($event.target.value)">
+   </label>
+   <label>
+     Enter color (px):
+     <input type="color" [value]="color" (change)="onChangerColor($event.target.value)">
+   </label>
+ </div>
+<p class="output" [style.fontSize.px]="fontSize" [style.color]="color">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cumque nostrum quibusdam. Inventore quibusdam debitis, tempore error voluptatem explicabo ipsum?
+</p>
