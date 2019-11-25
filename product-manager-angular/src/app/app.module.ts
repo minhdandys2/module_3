@@ -8,6 +8,8 @@ import { ProductAddComponent } from './products/product-add/product-add.componen
 import { HeaderComponent } from './menu/header/header.component';
 import { StarComponent } from './star/star.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
+import { TimelinesComponent } from './timelines/timelines.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     ProductListComponent,
     ProductAddComponent,
     HeaderComponent,
-    StarComponent
+    StarComponent,
+    ProductEditComponent,
+    TimelinesComponent
   ],
   imports: [
     BrowserModule,

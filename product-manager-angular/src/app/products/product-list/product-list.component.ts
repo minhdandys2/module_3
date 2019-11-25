@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductInterface} from '../../ProductInterface';
+import {ProductService} from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,38 +10,14 @@ import {ProductInterface} from '../../ProductInterface';
 export class ProductListComponent implements OnInit {
   message: string;
   productFilter: ProductInterface[] = [];
-  products: ProductInterface[] = [
-    {
-      id: 1,
-      name: 'cam',
-      price: 20000,
-      image: 'assets/images/anime3.jpg',
-      star: 4
-    },
-    {
-      id: 2,
-      name: 'tao',
-      price: 20000,
-      image: 'assets/images/anime3.jpg',
-      star: 5
-    },
-    {
-      id: 3,
-      name: 'gao',
-      price: 343412,
-      image: 'assets/images/anime3.jpg',
-      star: 2
-    },
-    {
-      id: 4,
-      name: 'nhan',
-      price: 44344434,
-      image: 'assets/images/anime3.jpg',
-      star: 4
-    }
-  ];
+  show = true;
+  products = this.productService.getAll();
 
-  constructor() {
+  constructor(private productService: ProductService) {
+  }
+
+  showHide() {
+    this.show = !this.show;
   }
 
   showMessage(event) {
@@ -48,7 +25,7 @@ export class ProductListComponent implements OnInit {
   }
 
   delete(index) {
-    this.products.splice(index, 1);
+    this.productService.delete(index);
   }
 
   filter(keyword) {
@@ -64,5 +41,4 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.productFilter = this.products;
   }
-
 }

@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="text-center">User profile form</h2>
   <!--novalidate (submit)="onSubmit()" -->
-  <form class="row justify-center-md-center" #profileForm = "ngForm" (submit)="onSubmit(profileForm)" novalidate>
+  <form class="row justify-center-md-center" #profileForm = "ngForm" (ngSubmit)="onSubmit(profileForm)" novalidate>
     <div class="col-12">
       <div class="form-group row">
         <label for="name" class="col-md-2 col-form-label">Name</label>
@@ -12,13 +12,13 @@
       <div class="form-group row">
         <label for="email" class="col-md-2 col-form-label" >Email</label>
         <div class="col-md-10">
-          <input name="email" type="text" class="form-control" id="email" [(ngModel)]="profile.email">
+          <input name="email" type="text" class="form-control" id="email" [ngModel]="profile.email">
         </div>
       </div>
       <div class="form-group row">
         <label for="tel" class="col-md-2 col-form-label">Tel</label>
         <div class="col-md-10">
-          <input name="tel" type="text" class="form-control" id="tel" [(ngModel)]="profile.tel">
+          <input name="tel" type="text" class="form-control" id="tel" [ngModel]="profile.tel">
         </div>
       </div>
       <div class="form-group row">

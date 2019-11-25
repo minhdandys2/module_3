@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-8">
+      <form [formGroup]="editProductForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label>Id</label>
+          <input type="text" class="form-control" formControlName="id">
+          <div *ngIf="id.invalid && id.touched">
+            <div *ngIf="id.errors.required">
+              <p class="text-danger">Trường naỳ không được để trống</p>
+            </div>
+            <div *ngIf="id.errors.minlength">
+              <p class="text-danger">Cần ít nhất 4 kí tự</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" formControlName="name">
+          <div *ngIf="name.invalid && name.touched">
+            <div *ngIf="name.errors.required">
+              <p class="text-danger">Trường naỳ không được để trống</p>
+            </div>
+            <div *ngIf="name.errors.minlength">
+              <p class="text-danger">Cần ít nhất 4 kí tự</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input type="text" class="form-control" formControlName="price" >
+          <div *ngIf="price.invalid && price.touched">
+            <div *ngIf="price.errors.required">
+              <p class="text-danger">Trường naỳ không được để trống</p>
+            </div>
+            <div *ngIf="price.errors.minlength">
+              <p class="text-danger">Cần ít nhất 4 kí tự</p>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!editProductForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import {ProductService} from '../../services/product.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-add',
@@ -13,14 +15,17 @@ export class ProductAddComponent implements OnInit {
     price: ['', [Validators.required, Validators.minLength(4)]]
   });
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private productService: ProductService,
+              private route: Router) {
   }
 
   ngOnInit() {
   }
 
   submit() {
-    console.log(this.addProductForm.value);
+    this.productService.create(this.addProductForm.value);
+    return this.route.navigate(['/products']);
   }
 
   get id() {

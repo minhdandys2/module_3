@@ -16,7 +16,7 @@ export class StarComponent implements OnInit, OnChanges {
   ngOnChanges() {
     this.widthStar = this.star * 75 / 5;
   }
-  click(){
+  click() {
     this.clickStar.emit('This star is ' + this.star);
   }
   ngOnInit() {
