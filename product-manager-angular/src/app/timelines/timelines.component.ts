@@ -13,7 +13,6 @@ output = '';
 
   ngOnInit() {
   }
-
   onChange(value) {
     this.output = this.dateUtilService.getDiffToNow(value);
   }

@@ -1,0 +1,40 @@
+<form [formGroup]="addAwesomeForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>Tag</label>
+    <input type="text" class="form-control" formControlName="tag" placeholder="Tag">
+    <div *ngIf="tag.invalid && tag.touched">
+      <div *ngIf="tag.errors.required">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+      <div *ngIf="tag.errors.minlength ">
+        <p class="text-danger">Ít nhất 2 kí tự!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>URL</label>
+    <input type="text" class="form-control" formControlName="url" placeholder="Http://">
+    <div *ngIf="url.invalid">
+      <div *ngIf="url.errors.required && url.touched">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+      <div *ngIf="url.errors.minlength ">
+        <p class="text-danger">Ít nhất 2 kí tự!</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Descriptions</label>
+    <input type="text" class="form-control" formControlName="descriptions" placeholder="Awesome!">
+    <div *ngIf="descriptions.invalid">
+      <div *ngIf="descriptions.errors.required && descriptions.touched">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+      <div *ngIf="descriptions.errors.minlength ">
+        <p class="text-danger">Ít nhất 2 kí tự!</p>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!addAwesomeForm.valid">Create</button>
+</form>

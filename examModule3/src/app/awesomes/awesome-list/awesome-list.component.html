@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-light">
+  <input class="form-control" type="text" placeholder="Search" >
+</nav>
+<button class="btn btn-success" style="margin: 10px 0 10px 0" routerLink="/awesome/create">Create</button>
+<div class="card">
+  <div class="card-header">
+    My Awesome List
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tag</th>
+        <th scope="col">URL</th>
+        <th scope="col">Description</th>
+      </tr>
+      </thead>
+      <tbody >
+      <tr *ngFor="let awesome of awesomes, let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td><a [routerLink]="['/awesome',awesome.id, 'edit']">{{awesome.tag}}</a></td>
+        <td>{{awesome.url}}</td>
+        <td>{{awesome.descriptions}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

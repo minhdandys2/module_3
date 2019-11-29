@@ -9,7 +9,6 @@ import { FontSizeEditoreComponent } from './font-size-editore/font-size-editore.
 import { PetComponent } from './pet/pet.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { StarComponent } from './star/star.component';
-import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +18,6 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     PetComponent,
     CalculatorComponent,
     StarComponent,
-    CountdownTimerComponent,
   ],
   imports: [
     BrowserModule,

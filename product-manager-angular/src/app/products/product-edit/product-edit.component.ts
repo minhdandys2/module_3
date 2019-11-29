@@ -17,7 +17,6 @@ export class ProductEditComponent implements OnInit {
               private activeRoute: ActivatedRoute,
               private route: Router) {
   }
-
   ngOnInit() {
     const product = this.productService.findById(this.index);
     this.editProductForm = this.fb.group({
@@ -25,7 +24,6 @@ export class ProductEditComponent implements OnInit {
       name: [product.name, [Validators.required, Validators.minLength(2)]],
       price: [product.price, [Validators.required, Validators.minLength(4)]]
     });
-
   }
 
   submit() {

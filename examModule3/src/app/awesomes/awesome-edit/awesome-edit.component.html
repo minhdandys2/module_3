@@ -1,0 +1,43 @@
+<form [formGroup]="editAwesomeForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>Tag</label>
+    <input type="text" class="form-control" formControlName="tag">
+    <div *ngIf="tag.invalid && tag.touched">
+      <div *ngIf="tag.errors.required">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+      <div *ngIf="tag.errors.minlength ">
+        <p class="text-danger">Ít nhất 2 kí tự!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>URL</label>
+    <input type="text" class="form-control" formControlName="url">
+    <div *ngIf="url.invalid">
+      <div *ngIf="url.errors.required && url.touched">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+      <div *ngIf="url.errors.minlength ">
+        <p class="text-danger">Ít nhất 2 kí tự!</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Descriptions</label>
+    <input type="text" class="form-control" formControlName="descriptions">
+    <div *ngIf="descriptions.invalid">
+      <div *ngIf="descriptions.errors.required && descriptions.touched">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+      <div *ngIf="descriptions.errors.minlength ">
+        <p class="text-danger">Ít nhất 2 kí tự!</p>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!editAwesomeForm.valid">Update</button>
+  <button class="btn btn-success" style="margin-left: 10px" routerLink="/awesome">Cancel</button>
+  <button class="btn btn-danger" style="margin-left: 870px" (click)="delete(id)">Delete</button>
+</form>
+

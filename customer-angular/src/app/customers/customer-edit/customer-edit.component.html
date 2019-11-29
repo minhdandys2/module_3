@@ -1,0 +1,35 @@
+<form [formGroup]="editCustomerForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name">
+    <div *ngIf="name.invalid && name.touched">
+      <div *ngIf="name.errors.required">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+      <div *ngIf="name.errors.minlength">
+        <p class="text-danger">Ít nhất 2 kí tự!</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="form-control" formControlName="email">
+    <div *ngIf="email.invalid && email.touched">
+      <div *ngIf="email.errors.required">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+    <textarea type="text" class="form-control" formControlName="address" rows="4">
+    </textarea>
+    <div *ngIf="address.invalid && address.touched">
+      <div *ngIf="address.errors.required">
+        <p class="text-danger">Trường này không được để trống!</p>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!editCustomerForm.valid">Update</button>
+</form>
+
